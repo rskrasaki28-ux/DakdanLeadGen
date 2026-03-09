@@ -14,7 +14,9 @@ export default defineConfig(({ mode }) => {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.API_BASE_URL': JSON.stringify(env.API_BASE_URL),
-        'process.env.API_TOKEN': JSON.stringify(env.API_TOKEN)
+        'process.env.API_TOKEN': JSON.stringify(env.API_TOKEN),
+        'process.env.NEXT_PUBLIC_SUPABASE_URL': JSON.stringify(env.NEXT_PUBLIC_SUPABASE_URL),
+        'process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY': JSON.stringify(env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
       },
       resolve: {
         alias: {
