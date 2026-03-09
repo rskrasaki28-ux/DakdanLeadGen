@@ -1,0 +1,143 @@
+import os
+import json
+from dotenv import load_dotenv
+
+from openai import OpenAI
+
+from supabase import create_client, Client
+
+
+
+load_dotenv()
+
+
+
+
+url = os.getenv("SUPABASE_URL")
+
+key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+
+openai_key = os.getenv("OPENAI_API_KEY")
+
+
+
+if not all([url, key, openai_key]):
+
+    print("Error: Missing keys in .env (Need SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, OPENAI_API_KEY)")
+
+    exit(1)
+
+
+
+supabase: Client = create_client(url, key)
+
+client = OpenAI(api_key=openai_key)
+
+
+
+def main():
+
+    print("--- Starting Scoring Loop ---")
+
+
+
+    response = supabase.table("leads").select("*").eq("lead_score", 0).limit(1).execute()
+
+
+
+    if not response.data:
+
+        print("No unscored leads found (lead_score = 0).")
+
+        return
+
+
+
+    lead_data = response.data[0]
+
+    lead_id = lead_data.get("id")
+
+    print(f"Scoring Lead ID: {lead_id} | Company: {lead_data.get('company_name', 'Unknown')}")
+
+
+    prompt = f"""
+
+    You are a lead scoring system. Analyze the provided Lead JSON and assign a score
+
+    (0-100) using the rubric as guidance.
+
+
+
+    Scoring Rubric (Guide Only):
+
+    - Firmographic: Industry match, location, size.
+
+    - Behavioral: Engagement metrics (if available).
+
+    - Engagement: Website or contact validity.
+
+
+
+    Lead JSON:
+
+    {json.dumps(lead_data)}
+
+
+
+    Output STRICT JSON: {{"score": <int>, "reason": "<short string>"}}
+
+    """
+
+
+
+    try:
+
+        completion = client.chat.completions.create(
+
+            model="gpt-4o",
+
+            messages=[
+
+                {"role": "system", "content": "You output only valid JSON."},
+
+                {"role": "user", "content": prompt}
+
+            ],
+
+            temperature=0,
+
+            response_format={"type": "json_object"},
+
+        )
+
+        
+
+        result = json.loads(completion.choices[0].message.content)
+
+        final_score = result.get("score", 0)
+
+        reason = result.get("reason", "No reason provided")
+
+        
+
+        print(f"Calculated Score: {final_score}")
+
+        print(f"Reason: {reason}")
+
+
+
+        supabase.table("leads").update({"lead_score": final_score}).eq("id", lead_id).execute()
+
+        print("SUCCESS: Database updated.")
+
+
+
+    except Exception as e:
+
+        print(f"Error during scoring/update: {e}")
+
+
+
+if __name__ == "__main__":
+
+    main()

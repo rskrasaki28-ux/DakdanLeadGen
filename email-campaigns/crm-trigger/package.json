@@ -1,0 +1,14 @@
+{
+  "name": "crm-trigger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node trigger-workflow.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.4.0"
+  }
+}
+

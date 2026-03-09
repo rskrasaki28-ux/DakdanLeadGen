@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Template</title>
+
+    <style>
+      /* Mobile styles */
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+        }
+        .content {
+          padding: 20px !important;
+        }
+        .header-padding {
+          padding: 24px 16px !important;
+        }
+        .cta-button a {
+          display: block !important;
+          width: 100% !important;
+          box-sizing: border-box;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;background-color:#eef1f4;">
+
+    <!-- Outer Wrapper -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#eef1f4;">
+      <tr>
+        <td align="center" style="padding:24px;">
+
+          <!-- Main Container -->
+          <table
+            class="container"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="max-width:600px;background-color:#ffffff;border-radius:8px;
+                   overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+
+            <!-- Header / Logo -->
+            <tr>
+              <td align="center" class="header-padding" style="padding:32px 20px 24px;">
+                <img
+                  src="{{LogoUrl}}"
+                  alt="{{Company}} Logo"
+                  width="120"
+                  style="display:block;border:0;outline:none;text-decoration:none;"
+                />
+              </td>
+            </tr>
+
+            <!-- Divider -->
+            <tr>
+              <td style="padding:0 32px;">
+                <hr style="border:none;border-top:1px solid #e5e7eb;" />
+              </td>
+            </tr>
+
+            <!-- Content -->
+            <tr>
+              <td
+                class="content"
+                style="padding:28px 32px;color:#374151;line-height:1.7;font-size:15px;">
+
+                <p style="margin:0 0 12px;">
+                  Hi {{FirstName}},
+                </p>
+
+                <p style="margin:0 0 20px;">
+              Replace this section with campaign-specific content.
+                </p>
+
+                <!-- CTA Button -->
+                <table cellpadding="0" cellspacing="0" align="left" class="cta-button">
+                  <tr>
+                    <td align="center" style="background-color:#2563eb;border-radius:4px;">
+                      <a
+                        href="{{CtaLink}}"
+                        style="display:inline-block;padding:12px 20px;
+                               color:#ffffff;text-decoration:none;font-size:14px;
+                               font-weight:600;">
+                        {{CtaText}}
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="clear:both;"></div>
+
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                align="center"
+                style="padding:20px;background-color:#f9fafb;
+                       color:#6b7280;font-size:12px;line-height:1.5;">
+                © {{Year}} {{Company}} · All rights reserved<br />
+                <a
+                  href="{{UnsubscribeLink}}"
+                  style="color:#6b7280;text-decoration:underline;">
+                  Unsubscribe
+                </a>
+              </td>
+            </tr>
+
+          </table>
+          <!-- End Container -->
+
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,161 @@
+[
+  { 
+    "id": 1, 
+    "expectedBand": "High",   
+    "expectedMin": 80, 
+    "expectedMax": 95, 
+    "notes": "Sports, VP Marketing, demo request, strong ICP fit." 
+},
+
+{ 
+    "id": 2, 
+    "expectedBand": "High",   
+    "expectedMin": 75, 
+    "expectedMax": 90, 
+    "notes": "Trucking Ops Director, website form, large company." 
+},
+
+{ 
+    "id": 3, 
+    "expectedBand": "Medium", 
+    "expectedMin": 55, 
+    "expectedMax": 70, 
+    "notes": "Smallbusiness founder, webinar, small company." 
+},
+  
+{ 
+    "id": 4, 
+    "expectedBand": "Medium", 
+    "expectedMin": 50, 
+    "expectedMax": 65, 
+    "notes": "Government IT Manager, inbound form, strong org fit." 
+},
+  
+{ 
+    "id": 5, 
+    "expectedBand": "Medium", 
+    "expectedMin": 45, 
+    "expectedMax": 60, 
+    "notes": "Zoo Marketing Manager, newsletter, moderate intent." 
+},
+  
+{ 
+    "id": 6, 
+    "expectedBand": "Low",    
+    "expectedMin": 20, 
+    "expectedMax": 40, 
+    "notes": "Trucking Fleet Supervisor, scraped list, mid-size." 
+},
+  
+{ 
+    "id": 7, 
+    "expectedBand": "Low",    
+    "expectedMin": 15, 
+    "expectedMax": 35, 
+    "notes": "Sports Junior Analyst, scraped list, mid-size." 
+},
+  
+{ 
+    "id": 8, 
+    "expectedBand": "Low",    
+    "expectedMin": 10, 
+    "expectedMax": 30, 
+    "notes": "Smallbusiness office assistant, cold outbound, micro." 
+},
+  
+{ 
+    "id": 9, 
+    "expectedBand": "High",   
+    "expectedMin": 80, 
+    "expectedMax": 95, 
+    "notes": "Government Director of Finance, RFP download, large." 
+},
+  
+{ 
+    "id": 10,
+    "expectedBand": "High",   
+    "expectedMin": 75, 
+    "expectedMax": 90, 
+    "notes": "Zoo CEO, referral, strong buying authority." 
+},
+  
+{ 
+    "id": 11,
+    "expectedBand": "High",   
+    "expectedMin": 80, 
+    "expectedMax": 95, 
+    "notes": "Sports CMO, conference meeting, enterprise-ish." 
+},
+  
+{ 
+    "id": 12,
+    "expectedBand": "Medium", 
+    "expectedMin": 45, 
+    "expectedMax": 60, 
+    "notes": "Trucking Data Engineer, newsletter, mid-size." 
+},
+  
+{ 
+    "id": 13,
+    "expectedBand": "Medium", 
+    "expectedMin": 55, 
+    "expectedMax": 70, 
+    "notes": "Smallbusiness Marketing Director, inbound form." 
+},
+  
+{ 
+    "id": 14,
+    "expectedBand": "Medium",
+     "expectedMin": 45, 
+     "expectedMax": 65, 
+     "notes": "Government Program Manager, webinar, good fit."
+},
+  
+{ 
+    "id": 15,
+    "expectedBand": "Low",    
+    "expectedMin": 20, 
+    "expectedMax": 40, 
+    "notes": "Zoo Ops Manager, scraped list, moderate fit low intent." 
+},
+  
+{ 
+    "id": 16,
+    "expectedBand": "High",   
+    "expectedMin": 80, 
+    "expectedMax": 95, 
+    "notes": "Sports VP Sales, referral, strong intent and seniority." 
+},
+  
+{ 
+    "id": 17,
+    "expectedBand": "Low",    
+    "expectedMin": 20, 
+    "expectedMax": 40, 
+    "notes": "Trucking Logistics Coordinator, cold outbound, small." 
+},
+  
+{ 
+    "id": 18,
+    "expectedBand": "Low",    
+    "expectedMin": 10, 
+    "expectedMax": 30, 
+    "notes": "Smallbusiness owner, scraped list, micro business." 
+},
+  
+{ 
+    "id": 19,
+    "expectedBand": "High",   
+    "expectedMin": 80, 
+    "expectedMax": 95, 
+    "notes": "Government Chief of Staff, demo request, large org." 
+},
+  
+{ 
+    "id": 20,
+    "expectedBand": "Low",    
+    "expectedMin": 15, 
+    "expectedMax": 35, 
+    "notes": "Zoo coordinator, unknown source, lower authority." 
+}
+]

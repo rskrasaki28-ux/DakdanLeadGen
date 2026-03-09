@@ -1,0 +1,13 @@
+{
+  "name": "teamd-sendgrid-mailer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "send:test": "node src/send-test-email.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.0",
+    "dotenv": "^16.4.0"
+  }
+}

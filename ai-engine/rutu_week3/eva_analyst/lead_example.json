@@ -1,0 +1,19 @@
+{
+  "id": 101,
+  "email": "sarah.jones@examplezoo.com",
+  "firstName": "Sarah",
+  "lastName": "Jones",
+  "phone": "+1-312-555-0198",
+  "company": "Lincoln Park Zoo",
+  "jobTitle": "Operations Manager",
+  "industry": "zoo",
+  "source": "Website form",
+  "companySize": "201-500",
+  "location": {
+    "city": "Chicago",
+    "state": "IL",
+    "country": "US"
+  },
+  "website": "https://www.lpzoo.org",
+  "lead_score": 0
+}

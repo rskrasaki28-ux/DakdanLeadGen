@@ -1,0 +1,18 @@
+# Secrets
+.env
+.env.local
+secrets.json
+
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# OS Files
+.DS_Store
+Thumbs.db
+# Dashboard specific
+dashboard/node_modules/
+dashboard/.env.local
+dashboard/dist/
+dashboard/.vite/

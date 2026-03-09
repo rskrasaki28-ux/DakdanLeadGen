@@ -1,0 +1,7 @@
+{
+  "name": "Dakdan AI Engine",
+  "description": "AI-Powered Lead Generation Engine with Digital Employees for Dakdan Worldwide.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

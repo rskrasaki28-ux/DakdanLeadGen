@@ -1,0 +1,23 @@
+{
+  "name": "week_3", 
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/runEvaScoringLoop.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/runEvaScoringLoop.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.91.1",
+    "openai": "^6.16.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}
