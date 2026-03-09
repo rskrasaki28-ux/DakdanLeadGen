@@ -6,8 +6,13 @@ import { leadService } from "./leadService";
 import { AGENTS } from "../constants";
 import { Lead } from '../models/ui/Lead';
 
-// Initialize Gemini Client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Lazy-initialize Gemini Client so the app doesn't crash when API key is missing (e.g. on Vercel without env vars)
+let _ai: InstanceType<typeof GoogleGenAI> | null = null;
+function getAI(): InstanceType<typeof GoogleGenAI> | null {
+  if (!process.env.API_KEY) return null;
+  if (!_ai) _ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  return _ai;
+}
 
 export interface GeminiResponse {
     text: string;
@@ -143,10 +148,11 @@ export const getGeminiChatResponse = async (
   depth: number = 0,
   onStatusUpdate?: (status: string) => void
 ): Promise<GeminiResponse> => {
-  if (!process.env.API_KEY) {
+  const ai = getAI();
+  if (!ai) {
     return { text: "Error: API Key is missing. Please check your configuration." };
   }
-  
+
   // Prevent infinite recursion loops in delegation
   if (depth > 2) return { text: "I cannot delegate further (recursion limit)." };
 

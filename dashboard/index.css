@@ -1,0 +1,4 @@
+/* App styles - Tailwind is loaded via CDN in index.html */
+#root {
+  min-height: 100vh;
+}
